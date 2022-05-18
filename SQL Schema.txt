@@ -1,0 +1,84 @@
+mysql> use recipies;
+Database changed
+mysql> show tables;
++--------------------+
+| Tables_in_recipies |
++--------------------+
+| admin              |
+| recipie            |
+| review             |
+| user               |
++--------------------+
+4 rows in set (0.02 sec)
+
+mysql> desc admin;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int          | NO   | PRI | NULL    | auto_increment |
+| password | varchar(255) | YES  |     | NULL    |                |
+| username | varchar(255) | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> desc user;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int          | NO   | PRI | NULL    | auto_increment |
+| email    | varchar(255) | YES  |     | NULL    |                |
+| name     | varchar(255) | YES  |     | NULL    |                |
+| password | varchar(255) | YES  |     | NULL    |                |
+| phone    | bigint       | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+5 rows in set (0.01 sec)
+
+mysql> desc recipie;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| id            | int          | NO   | PRI | NULL    | auto_increment |
+| cooking_steps | longtext     | YES  |     | NULL    |                |
+| category      | varchar(255) | YES  |     | NULL    |                |
+| imgurl        | varchar(255) | YES  |     | NULL    |                |
+| ingrediants   | varchar(255) | YES  |     | NULL    |                |
+| name          | varchar(255) | YES  |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> select * from admin;
++----+-----------+----------------+
+| id | password  | username       |
++----+-----------+----------------+
+|  1 | deepak123 | deepak@123.com |
++----+-----------+----------------+
+1 row in set (0.01 sec)
+
+mysql> select * from user;
++----+------------------+----------+----------+-------------+
+| id | email            | name     | password | phone       |
++----+------------------+----------+----------+-------------+
+|  1 | sai@123.com      | sai      | sai123   |   123456780 |
+|  2 | hari@123.com     | hari     | hari121  |   987654322 |
+|  3 | mohan@123.com    | mohan    | mohan123 |  1234567899 |
+|  4 | NULL             | NULL     | NULL     |           0 |
+|  5 | priyanka@123.com | priyanka | priya123 | 98989898989 |
+|  6 | sweta@123.com    | sweta    | sweta123 | 12345566667 |
+|  7 | abhi@123.com     | abhi123  | abhi123  |  1323243535 |
+|  8 | jai@123.com      | jai      | jai123   | 34434545665 |
+|  9 | balu@123.com     | balu     | balu123  |  3245354646 |
+| 10 | ravi@123.com     | ravi     | ravi123  |   342542426 |
++----+------------------+----------+----------+-------------+
+10 rows in set (0.01 sec)
+
+mysql> select * from recipie;
++----+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+------------------------------------------------------------------------------------------+--------------------------------------------------------------------+----------------+
+| id | cooking_steps                                                                                                                                                                                                                                                                                                          | category | imgurl                                                                                   | ingrediants                                                        | name           |
++----+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+------------------------------------------------------------------------------------------+--------------------------------------------------------------------+----------------+
+|  7 | Pour oil to a hot pan and add cumin, green cardamoms, green chilli and garlic.Saute garlic until a nice aroma comes out, then add green peas and methi leaves.Add garam masala powder, turmeric and mix well.Transfer cooled rice and sprinkle salt Serve methi rice with raita or a veggie salad                      | Veg      | https://s3.amazonaws.com/images.chefinyou.com/main/methi-pulao-rice-recipe/main-img7.JPG | Oil_Methi_Rice_Vegies_Spices_pan_onions                            | Methi Rice     |
+| 16 | Rinse rice and moong dal in a pot for 5 min. chopp onion,tomato. heat a pressure cooker with oil, add cumin seeds, onion and tomato and green chilis, add slices and mix well. Add rice and dal in cooker, pour 4 cups of water and mix, cover pressure cooker, wait until 2-3 whistles open the lid and stir well. .  | Veg      | https://spillthespices.com/wp-content/uploads/2020/09/dalkhichdi2.jpg                    | Onion_Tomato_spices_Rice_Greenchili_Veggies                        | Dal_Khichdi    |
+| 17 | Rinse rice and moong dal in a pot for 5 min. chopp onion,tomato. heat a pressure cooker with oil, add cumin seeds, onion and tomato and green chilis, add slices and mix well. Add rice and dal in cooker, pour 4 cups of water and mix, cover pressure cooker, wait until 2-3 whistles open the lid and stir well. .  | Non_veg  | https://www.licious.in/blog/wp-content/uploads/2020/12/Egg-Curry.jpg                     | Onion_Tomato_spices_Eggs_GingerGarlicPaste_GreenChilli_CurryLeaves | Anda-Curry     |
+| 18 | Heat a pan with butter & saute cinnamon, cloves and cardamoms for a min.Add ginger garlic paste, green chilies and fry till it turns fragrant.Next pour the tomato cashew puree.Add red chili powder, sugar and salt.Mix and cook until the tomato puree becomes thick."
+    },                                        | Non-veg  | https://i.ibb.co/zXW6Xtb/butter-chicken.jpg                                              | "chicken_spices_tomatoes_cream                                     | Butter-Chicken |
++----+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+------------------------------------------------------------------------------------------+--------------------------------------------------------------------+----------------+
+4 rows in set (0.01 sec)
